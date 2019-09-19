@@ -49,6 +49,7 @@ body{
     align-items: center;
     justify-content: center;
     grid-row: 2/4;
+    min-height: 100px;
 }
 
 .contenedor .wiget-1,
@@ -64,4 +65,16 @@ body{
 .contenedor .foter{
     background:rgb(243, 98, 97);
     grid-column: span 3;
+}
+@media screen and (max-width:768px) {
+    .contenedor .contenido{
+        grid-column: 1/-1;
+    }
+    .contenedor .sidebar{
+        grid-column: 1/-1;
+    }
+    .contenedor .wiget-1{
+        grid-column: span 2;
+    }
+
 }
