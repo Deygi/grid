@@ -33,23 +33,27 @@ body{
 .contenedor .header{
     background: rgb(118, 115, 132);
     color: rgb(234, 235, 245);
-    grid-column-start: 1;
-    grid-column-end: 4;
+    /* grid-column-start: 1; */
+    /* grid-column-end: 4; */
+    grid-area: header;
 }
 
 .contenedor .contenido{
-    grid-column: span 2;
+    /* grid-column: span 2; */
+    grid-area: contenido;
 }
 .contenedor .sidebar{
-    grid-column: 3/4;
+    /* grid-column: 3/4; */
     background:rgb(152, 212, 216);
     color:rgb(132, 132, 132);
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    grid-row: 2/4;
+    /* grid-row: 2/4; */
     min-height: 100px;
+    grid-area: sidebar;
+
 }
 
 .contenedor .wiget-1,
@@ -60,13 +64,19 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+
+}
+.contenedor .wiget-1{
+    grid-area: wiget-1;
 }
 
 .contenedor .foter{
     background:rgb(243, 98, 97);
-    grid-column: span 3;
+    grid-area: foter;
+    /* grid-column: span 3; */
 }
-@media screen and (max-width:768px) {
+
+/* @media screen and (max-width:768px) {
     .contenedor .contenido{
         grid-column: 1/-1;
     }
@@ -77,4 +87,12 @@ body{
         grid-column: span 2;
     }
 
+} */
+@media screen and(max-width:768px){
+    .contenedor{
+        grid-template-areas: "header header header"
+                            "contenido contenido sidebar"
+                            "wiget-1 wiget-2 sidebar"
+                            "foter foter foter";
+    }
 }
